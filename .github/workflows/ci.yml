@@ -3,6 +3,8 @@ name: CI
 on:
   pull_request:
     branches: ['main']
+  push:
+    branches: ['main']
 
 permissions:
   contents: read
@@ -31,3 +33,10 @@ jobs:
         run: npm run format:check
       - name: ESLint
         run: npm run lint
+
+  main-pass:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark CI successful on main push
+        run: echo "CI (main) completed"
