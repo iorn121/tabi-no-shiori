@@ -49,6 +49,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
       - name: Add SPA fallback (404.html)
         run: cp dist/index.html dist/404.html
       - name: Upload artifact
@@ -60,6 +62,9 @@ jobs:
     if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
     steps:
