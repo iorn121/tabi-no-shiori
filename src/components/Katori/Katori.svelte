@@ -50,10 +50,12 @@
   <h3>グルメ</h3>
   <ul class="food-list">
     {#each shiori.foods as food}
-      <li class="food-item"><b>{food.title}</b> <br /> <span class="food-desc">{food.desc}</span></li>
+      <li class="food-item">
+        <b>{food.title}</b> <br /> <span class="food-desc">{food.desc}</span>
+      </li>
     {/each}
   </ul>
-    <div class="access-box">
+  <div class="access-box">
     <b>アクセス</b><br />{shiori.access}
   </div>
   <div class="option-box">

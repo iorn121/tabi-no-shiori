@@ -18,14 +18,15 @@
 
 /* ===== ベース ===== */
 body {
-  font-family: "Noto Sans JP", "Zen Kaku Gothic New", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', 'Hiragino Sans', Meiryo, sans-serif;
   color: var(--color-text);
   background: var(--color-cream);
   line-height: 1.75;
 }
 
-h2, h3 {
-  font-family: "Noto Serif JP", "Shippori Mincho", "Hiragino Mincho ProN", serif;
+h2,
+h3 {
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
   color: var(--color-brown);
 }
 
@@ -43,7 +44,8 @@ p {
   margin: 0.4rem 0 0.8rem;
 }
 
-small, .muted {
+small,
+.muted {
   color: var(--color-subtext);
 }
 
@@ -88,10 +90,18 @@ thead th {
 }
 
 /* カードの余白バリエーション */
-.card--md { padding: 12px 10px; }
-.card--sm { padding: 10px 12px; }
-.card--flex { flex: 1 1 0; }
-.card-desc--mt { margin-top: 2px; }
+.card--md {
+  padding: 12px 10px;
+}
+.card--sm {
+  padding: 10px 12px;
+}
+.card--flex {
+  flex: 1 1 0;
+}
+.card-desc--mt {
+  margin-top: 2px;
+}
 
 /* ===== タイムテーブル ===== */
 .schedule-list {
@@ -183,13 +193,21 @@ thead th {
   background: var(--color-washi);
   border-radius: 8px;
   border-left: 4px solid var(--color-brown);
-  transition: background 0.2s ease, transform 0.05s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.05s ease;
   border-left-color: var(--color-crimson);
 }
-.food-item:hover { background: rgba(163, 123, 72, 0.08); }
-.food-item:active { transform: translateY(1px); }
+.food-item:hover {
+  background: rgba(163, 123, 72, 0.08);
+}
+.food-item:active {
+  transform: translateY(1px);
+}
 
-.food-item b { color: var(--color-brown); }
+.food-item b {
+  color: var(--color-brown);
+}
 .food-desc {
   color: var(--color-subtext);
   font-size: 13px;
@@ -211,9 +229,15 @@ thead th {
 }
 
 /* ===== 小装飾（モチーフ色） ===== */
-.accent-maple { color: var(--color-crimson); }
-.accent-ginkgo { color: var(--color-gold); }
-.accent-chrys { color: var(--color-orange-gold); }
+.accent-maple {
+  color: var(--color-crimson);
+}
+.accent-ginkgo {
+  color: var(--color-gold);
+}
+.accent-chrys {
+  color: var(--color-orange-gold);
+}
 
 /* ===== メタ表示：luggage_tag（和モダン配色） ===== */
 .luggage_tag {
@@ -235,13 +259,16 @@ thead th {
   height: 26px;
   margin: 0 0 10px 10px;
   padding: 0 20px 0 23px;
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
   text-decoration: none;
   color: var(--color-washi);
   border-radius: 0 3px 3px 0;
   background: var(--color-brown);
 }
-    .luggage_tag a::before,
+.luggage_tag a::before,
 .luggage_tag span::before,
 .luggage_tag a::after,
 .luggage_tag span::after {
@@ -278,5 +305,3 @@ thead th {
 .luggage_tag span:hover::after {
   border-color: transparent var(--color-crimson) transparent transparent;
 }
-
-
