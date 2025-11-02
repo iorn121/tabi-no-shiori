@@ -1,3 +1,71 @@
+/* ===== 秋 × 和モダン パレット（CSS変数） ===== */
+:root {
+  --color-brown: #a37b48; /* メイン（茶） */
+  --color-cream: #f5e4c3; /* 背景（クリーム） */
+  --color-crimson: #9a3334; /* アクセント1（紅葉） */
+  --color-gold: #e6b422; /* アクセント2（銀杏） */
+  --color-orange-gold: #c7792e; /* アクセント3（菊） */
+  --color-text: #3a3a3a; /* サブ文字色（灰墨） */
+  --color-subtext: #6b5a45; /* 薄墨（灰茶） */
+  --color-washi: #faf0e8; /* 淡背景（和白） */
+  /* Luggage tag */
+  --tag-width: 220px;
+  --tag-height: 60px;
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --muted: rgba(58, 58, 58, 0.25);
+}
+
+/* ===== ベース ===== */
+body {
+  font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', 'Hiragino Sans', Meiryo, sans-serif;
+  color: var(--color-text);
+  background: var(--color-cream);
+  line-height: 1.75;
+}
+
+h2,
+h3 {
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  color: var(--color-brown);
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  border-left: 4px solid var(--color-gold);
+  padding-left: 8px;
+}
+
+p {
+  margin: 0.4rem 0 0.8rem;
+}
+
+small,
+.muted {
+  color: var(--color-subtext);
+}
+
+a {
+  color: var(--color-crimson);
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+/* ===== セクション・区切り ===== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-brown), transparent);
+  opacity: 0.25;
+  margin: 16px 0;
+}
+
+/* ===== テーブル（シンプルしおり用） ===== */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -5,6 +73,235 @@ table {
 }
 th,
 td {
-  border: 1px solid #aaa;
+  border: 1px solid rgba(163, 123, 72, 0.35); /* 茶色の薄い線 */
   padding: 0.5em 1em;
+}
+
+thead th {
+  background: var(--color-washi);
+  color: var(--color-brown);
+}
+
+/* ===== 汎用カード ===== */
+.card {
+  background: var(--color-washi);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px #0001;
+}
+
+/* カードの余白バリエーション */
+.card--md {
+  padding: 12px 10px;
+}
+.card--sm {
+  padding: 10px 12px;
+}
+.card--flex {
+  flex: 1 1 0;
+}
+.card-desc--mt {
+  margin-top: 2px;
+}
+
+/* ===== タイムテーブル ===== */
+.schedule-list {
+  padding-left: 0;
+}
+.schedule-item {
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.schedule-time {
+  min-width: 56px;
+  font-weight: bold;
+  background: var(--color-washi);
+  border-radius: 8px;
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 12px;
+}
+.schedule-title {
+  font-weight: bold;
+}
+.schedule-desc {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+/* ===== カード行（持ち物・注意点） ===== */
+.cards-row {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0 8px 0;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+.card-desc {
+  font-size: 13px;
+}
+
+/* ===== リストブロック（スポット等） ===== */
+.block-list {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block-item {
+  background: var(--color-washi);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px #0001;
+  padding: 12px 10px;
+}
+.block-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+.block-desc {
+  font-size: 13px;
+}
+.block-desc--mt {
+  margin-top: 2px;
+}
+
+/* ===== アクセス ===== */
+.access-box {
+  background: var(--color-washi);
+  border-radius: 8px;
+  margin: 8px 0 10px 0;
+  padding: 9px 14px;
+}
+
+/* ===== グルメ ===== */
+.food-list {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.food-item {
+  display: block;
+  margin: 0;
+  padding: 8px 10px;
+  background: var(--color-washi);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-brown);
+  transition:
+    background 0.2s ease,
+    transform 0.05s ease;
+  border-left-color: var(--color-crimson);
+}
+.food-item:hover {
+  background: rgba(163, 123, 72, 0.08);
+}
+.food-item:active {
+  transform: translateY(1px);
+}
+
+.food-item b {
+  color: var(--color-brown);
+}
+.food-desc {
+  color: var(--color-subtext);
+  font-size: 13px;
+}
+
+/* ===== オプション・注記 ===== */
+.option-box {
+  font-size: 13px;
+  background: var(--color-washi);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px 0;
+}
+.note {
+  font-size: 12px;
+  text-align: center;
+  color: var(--color-subtext);
+  margin: 8px 0;
+}
+
+/* ===== 小装飾（モチーフ色） ===== */
+.accent-maple {
+  color: var(--color-crimson);
+}
+.accent-ginkgo {
+  color: var(--color-gold);
+}
+.accent-chrys {
+  color: var(--color-orange-gold);
+}
+
+/* ===== メタ表示：luggage_tag（和モダン配色） ===== */
+.luggage_tag {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+.luggage_tag li {
+  display: inline-block;
+}
+.luggage_tag a,
+.luggage_tag span {
+  line-height: 26px;
+  position: relative;
+  display: inline-block;
+  height: 26px;
+  margin: 0 0 10px 10px;
+  padding: 0 20px 0 23px;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+  text-decoration: none;
+  color: var(--color-washi);
+  border-radius: 0 3px 3px 0;
+  background: var(--color-brown);
+}
+.luggage_tag a::before,
+.luggage_tag span::before,
+.luggage_tag a::after,
+.luggage_tag span::after {
+  background: var(--color-cream);
+}
+.luggage_tag a::before,
+.luggage_tag span::before {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  content: '';
+  border-radius: 10px;
+}
+.luggage_tag a::after,
+.luggage_tag span::after {
+  position: absolute;
+  top: -1px;
+  left: -6px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-style: solid;
+  border-width: 14px 8px 14px 0;
+  border-color: transparent var(--color-brown) transparent transparent;
+  border-radius: 4px;
+}
+.luggage_tag a:hover,
+.luggage_tag span:hover {
+  background: var(--color-crimson);
+}
+.luggage_tag a:hover::after,
+.luggage_tag span:hover::after {
+  border-color: transparent var(--color-crimson) transparent transparent;
 }

@@ -2,7 +2,7 @@ name: Deploy Pages on PR Merge
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ['main']
     types: [closed]
 
 permissions:
@@ -45,5 +45,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
